@@ -74,15 +74,6 @@
 </script>
 
 {#if summary.items.length > 0}
-  <div id="scroll-controls">
-    <label for="auto-scroll">Track current time</label>
-    <input
-      id="auto-scroll"
-      type="checkbox"
-      class="toggle"
-      bind:checked={autoScroll}
-    />
-  </div>
   <div id="day-planner-timeline-container">
     <div
       class="aside aside-x{timelineZoomLevel} filled"
@@ -105,7 +96,7 @@
             <div
               class="ei_Dot {item === summary.current ? 'dot_active' : ''}"
             />
-            <div class="ei_Title">{item.rawTime}</div>
+            <b class="ei_Title">{item.rawTime}</b>
             <div class="ei_Copy">{item.text ?? ""}</div>
           </div>
         </div>
@@ -295,8 +286,8 @@
 
   .ei_Copy {
     font-size: var(--font-ui-medium);
-    display: inline-block;
-    margin-left: var(--size-4-7);
+    display: block;
+    margin-left: var(--size-4-6);
   }
 
   .header_title,
